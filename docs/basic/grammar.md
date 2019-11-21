@@ -4,7 +4,7 @@
 
 JavaScript 程序的执行单位为行（line），也就是一行一行地执行。一般情况下，每一行就是一个语句。
 
-语句（statement）是为了完成某种任务而进行的操作，比如下面就是一行赋值语句。
+**语句（statement）**是为了完成某种任务而进行的操作，比如下面就是一行赋值语句。
 
 ```javascript
 var a = 1 + 3;
@@ -12,7 +12,7 @@ var a = 1 + 3;
 
 这条语句先用`var`命令，声明了变量`a`，然后将`1 + 3`的运算结果赋值给变量`a`。
 
-`1 + 3`叫做表达式（expression），指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。
+`1 + 3`叫做表达式**（expression）**，指一个为了得到返回值的计算式。语句和表达式的区别在于，前者主要为了进行某种操作，一般情况下不需要返回值；后者则是为了得到返回值，一定会返回一个值。凡是 JavaScript 语言中预期为值的地方，都可以使用表达式。比如，赋值语句的等号右边，预期是一个值，因此可以放置各种表达式。
 
 语句以分号结尾，一个分号就表示一个语句结束。多个语句可以写在一行内。
 
@@ -28,7 +28,7 @@ var a = 1 + 3 ; var b = 'abc';
 
 上面的代码就表示3个空语句。
 
-表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。
+表达式不需要分号结尾。一旦在表达式后面添加分号，则 JavaScript 引擎就将表达式视为语句，这样会产生一些没有任何意义的语句。**（表达式一般是没有意义的）**
 
 ```javascript
 1 + 3;
@@ -58,7 +58,7 @@ var a;
 a = 1;
 ```
 
-如果只是声明变量而没有赋值，则该变量的值是`undefined`。`undefined`是一个特殊的值，表示“无定义”。
+如果**只是声明变量而没有赋值**，则该变量的值是`undefined`。`undefined`是一个特殊的值，表示“无定义”。
 
 ```javascript
 var a;
@@ -73,9 +73,9 @@ var a = 1;
 a = 1;
 ```
 
-但是，不写`var`的做法，不利于表达意图，而且容易不知不觉地创建全局变量，所以建议总是使用`var`命令声明变量。
+但是，不写`var`的做法，**不利于表达意图，而且容易不知不觉地创建全局变量，**所以建议总是使用`var`命令声明变量。
 
-如果一个变量没有声明就直接使用，JavaScript 会报错，告诉你变量未定义。
+如果一个变量没有声明就直接使用，JavaScript 会报错，告诉你变量未定义。**（这个变量来的太突然了。）**
 
 ```javascript
 x
@@ -90,7 +90,7 @@ x
 var a, b;
 ```
 
-JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。
+JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。**（动态类型语言的解释，即，变量的类型是可以变化的。）**
 
 ```javascript
 var a = 1;
@@ -104,10 +104,10 @@ a = 'hello';
 ```javascript
 var x = 1;
 var x;
-x // 1
+console.log(x) // 1
 ```
 
-上面代码中，变量`x`声明了两次，第二次声明是无效的。
+上面代码中，变量`x`声明了两次，第二次声明是无效的。**（第二次赋值，是无效的，但是不会报错。仍然按照第一次的生命和赋值情况走。）**
 
 但是，如果第二次声明的时候还进行了赋值，则会覆盖掉前面的值。
 
@@ -124,7 +124,7 @@ x = 2;
 
 ### 变量提升
 
-JavaScript 引擎的工作方式是，先解析代码，获取所有被声明的变量，然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。
+JavaScript 引擎的工作方式是，**先解析代码，获取所有被声明的变量，**然后再一行一行地运行。这造成的结果，就是所有的变量的声明语句，都会被提升到代码的头部，这就叫做变量提升（hoisting）。
 
 ```javascript
 console.log(a);
@@ -149,8 +149,8 @@ a = 1;
 
 简单说，标识符命名规则如下。
 
-- 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），以及美元符号（`$`）和下划线（`_`）。
-- 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，还可以用数字`0-9`。
+- 第一个字符，可以是任意 Unicode 字母（包括英文字母和其他语言的字母），**以及美元符号（`$`）和下划线（`_`）**。
+- 第二个字符及后面的字符，除了 Unicode 字母、美元符号和下划线，**还可以用数字`0-9`。**
 
 下面这些都是合法的标识符。
 
@@ -177,7 +177,7 @@ a+b  // 标识符不能包含加号
 var 临时变量 = 1;
 ```
 
-> JavaScript 有一些保留字，不能用作标识符：arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield。
+> **JavaScript 有一些保留字，不能用作标识符：arguments、break、case、catch、class、const、continue、debugger、default、delete、do、else、enum、eval、export、extends、false、finally、for、function、if、implements、import、in、instanceof、interface、let、new、null、package、private、protected、public、return、static、super、switch、this、throw、true、try、typeof、var、void、while、with、yield。**
 
 ## 注释
 
@@ -206,7 +206,7 @@ x = 1; <!-- x = 2;
 
 ```javascript
 function countdown(n) {
-  while (n --> 0) console.log(n);
+  while (n-- > 0) console.log(n); (注意这里先进行运算，再进行加减)
 }
 countdown(3)
 // 2

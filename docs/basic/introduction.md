@@ -2,27 +2,27 @@
 
 ## 什么是 JavaScript 语言？
 
-JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”（script language），指的是它不具备开发操作系统的能力，而是只用来编写控制其他大型应用程序（比如浏览器）的“脚本”。
+JavaScript 是一种轻量级的脚本语言。所谓“脚本语言”（script language），指的是它不具备开发操作系统的能力，而是只用来编写**控制其他大型应用程序**（比如浏览器）的“脚本”。
 
-JavaScript 也是一种嵌入式（embedded）语言。它本身提供的核心语法不算很多，只能用来做一些数学和逻辑运算。JavaScript 本身不提供任何与 I/O（输入/输出）相关的 API，都要靠宿主环境（host）提供，所以 JavaScript 只合适嵌入更大型的应用程序环境，去调用宿主环境提供的底层 API。
+JavaScript 也是一种嵌入式（embedded）语言。它本身提供的核心语法不算很多，只能用来做**一些数学和逻辑运算**。JavaScript 本身不提供任何与 I/O（输入/输出）相关的 API，都要靠宿主环境（host）提供，所以 JavaScript 只合适嵌入更大型的应用程序环境，去调用宿主环境提供的底层 API。
 
 目前，已经嵌入 JavaScript 的宿主环境有多种，最常见的环境就是浏览器，另外还有服务器环境，也就是 Node 项目。
 
-从语法角度看，JavaScript 语言是一种“对象模型”语言。各种宿主环境通过这个模型，描述自己的功能和操作接口，从而通过 JavaScript 控制这些功能。但是，JavaScript 并不是纯粹的“面向对象语言”，还支持其他编程范式（比如函数式编程）。这导致几乎任何一个问题，JavaScript 都有多种解决方法。阅读本书的过程中，你会诧异于 JavaScript 语法的灵活性。
+从语法角度看，JavaScript 语言是一种**“对象模型”语言**。各种宿主环境通过这个模型，描述自己的功能和操作接口，从而通过 JavaScript 控制这些功能。但是，JavaScript 并不是纯粹的“面向对象语言”，还支持其他编程范式（比如函数式编程）。这导致几乎任何一个问题，JavaScript 都有多种解决方法。阅读本书的过程中，你会诧异于 JavaScript 语法的灵活性。
 
 JavaScript 的核心语法部分相当精简，只包括两个部分：基本的语法构造（比如操作符、控制结构、语句）和标准库（就是一系列具有各种功能的对象比如`Array`、`Date`、`Math`等）。除此之外，各种宿主环境提供额外的 API（即只能在该环境使用的接口），以便 JavaScript 调用。以浏览器为例，它提供的额外 API 可以分成三大类。
 
-- 浏览器控制类：操作浏览器
-- DOM 类：操作网页的各种元素
-- Web 类：实现互联网的各种功能
+- 浏览器控制类：操作**浏览器**
+- DOM 类：**操作网页**的各种元素
+- Web 类：**实现互联网**的各种功能
 
-如果宿主环境是服务器，则会提供各种操作系统的 API，比如文件操作 API、网络通信 API等等。这些你都可以在 Node 环境中找到。
+如果宿主环境是服务器，则会提供各种操作系统的 API，比如文件操作 API、 网络通信 API等等。这些你都可以在 Node 环境中找到。
 
 本书主要介绍 JavaScript 核心语法和浏览器网页开发的基本知识，不涉及 Node。全书可以分成以下四大部分。
 
 - 基本语法
 - 标准库
-- 浏览器 API
+- 浏览器 API (Dom)
 - DOM
 
 JavaScript 语言有多个版本。本书的内容主要基于 ECMAScript 5.1 版本，这是学习 JavaScript 语法的基础。ES6 和更新的语法请参考我写的[《ECMAScript 6入门》](http://es6.ruanyifeng.com/)。
@@ -69,7 +69,7 @@ Mozilla 基金会的手机操作系统 Firefox OS，更是直接将 JavaScript �
 
 **（6）跨平台的桌面应用程序**
 
-Chromium OS、Windows 8 等操作系统直接支持 JavaScript 编写应用程序。Mozilla 的 Open Web Apps 项目、Google 的 [Chrome App 项目](http://developer.chrome.com/apps/about_apps)、GitHub 的 [Electron 项目](http://electron.atom.io/)、以及 [TideSDK 项目](http://tidesdk.multipart.net/docs/user-dev/generated/)，都可以用来编写运行于 Windows、Mac OS 和 Android 等多个桌面平台的程序，不依赖浏览器。
+**Chromium OS、Windows 8 等操作系统直接支持 JavaScript 编写应用程序**。Mozilla 的 Open Web Apps 项目、Google 的 [Chrome App 项目](http://developer.chrome.com/apps/about_apps)、GitHub 的 [Electron 项目](http://electron.atom.io/)、以及 [TideSDK 项目](http://tidesdk.multipart.net/docs/user-dev/generated/)，都可以用来编写运行于 Windows、Mac OS 和 Android 等多个桌面平台的程序，不依赖浏览器。
 
 **（7）小结**
 
@@ -95,9 +95,9 @@ Chromium OS、Windows 8 等操作系统直接支持 JavaScript 编写应用程�
 
 JavaScript 的语法很类似 C/C++ 和 Java，如果学过这些语言（事实上大多数学校都教），JavaScript 的入门会非常容易。
 
-必须说明的是，虽然核心语法不难，但是 JavaScript 的复杂性体现在另外两个方面。
+**必须说明的是，虽然核心语法不难，但是 JavaScript 的复杂性体现在另外两个方面。**
 
-首先，它涉及大量的外部 API。JavaScript 要发挥作用，必须与其他组件配合，这些外部组件五花八门，数量极其庞大，几乎涉及网络应用的各个方面，掌握它们绝非易事。
+首先，它涉及大量的**外部 API**。JavaScript 要发挥作用，必须与其他组件配合，这些外部组件五花八门，数量极其庞大，几乎涉及网络应用的各个方面，掌握它们绝非易事。
 
 其次，JavaScript 语言有一些设计缺陷。某些地方相当不合理，另一些地方则会出现怪异的运行结果。学习 JavaScript，很大一部分时间是用来搞清楚哪些地方有陷阱。Douglas Crockford 写过一本有名的书，名字就叫[《JavaScript: The Good Parts》](http://javascript.crockford.com/)，言下之意就是这门语言不好的地方很多，必须写一本书才能讲清楚。另外一些程序员则感到，为了更合理地编写 JavaScript 程序，就不能用 JavaScript 来写，而必须发明新的语言，比如 CoffeeScript、TypeScript、Dart 这些新语言的发明目的，多多少少都有这个因素。
 
