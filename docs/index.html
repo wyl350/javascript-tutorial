@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <h3></h3>
+  <h3></h3>
+  <h3></h3>
+  <script>
+    // foo: {
+    //   console.log(1);
+    //   if (true) break;
+    //   // break;
+    //   // ;  
+    //   console.log('本行不会输出');
+    // }
+    // console.log(2);
+
+
+
+    // top:
+    // for (var i = 0; i < 3; i++) {
+    //   for (var j = 0; j < 3; j++) {
+    //     if (i === 1 && j === 1) continue top;
+    //     console.log('i=' + i + ', j=' + j);
+    //   }
+    // }
+
+    // top:
+    // for (var i = 0; i < 3; i++) {
+    //   for (var j = 0; j < 3; j++) {
+    //     if (i === 1 && j === 1) continue;
+    //     console.log('i=' + i + ', j=' + j);
+    //   }
+    // }
+
+    // function f() { }
+    // console.log(typeof f)
+    // console.log(undefined)
+    // var title
+    // console.log(title)
+
+    // console.log(typeof window)
+
+
+    // // var o = {};
+    // // var a = [];
+
+    // // console.log(o instanceof Array) // false
+    // // console.log(a instanceof Array) // true
+
+
+    // // console.log(instanceof o) // false
+    // // console.log(instanceof a) // true
+
+    // var a = null
+    // if (!undefined) {
+    //   console.log('null is false');
+    //   console.log(!undefined);
+    //   console.log(undefined)
+    // }
+    // // undefined is false
+    // console.log("-------------");
+
+    // if (a) {
+    //   console.log('!a is false');
+    //   console.log(!a);
+
+    // }
+    // console.log(a)
+    // console.log("-------------");
+
+    // // null is false
+
+    // // undefined == null
+    // console.log(undefined == null)
+    // console.log(undefined === null)
+
+    // console.log(!null)
+    // // true
+
+
+    // console.log(Number(null)) // 0
+    // console.log(5 + null) // 5
+
+    // console.log(Number(undefined)) // NaN
+    // console.log(5 + undefined) // NaN
+
+    // var x = 8989
+    // function f(x) {
+    //   return x;
+    // }
+    // function f() {
+    //   console.log('2323')
+    // }
+    // console.log(f()) // undefined
+
+
+
+    // var o = new Object();
+    // console.log(o.p) // undefined
+
+    // if ([]) {
+    //   console.log('true');
+    // }
+    // // true
+
+    // if ({}) {
+    //   console.log('true');
+    // }
+    // // true
+
+    // console.log(1 === 1.0)
+
+    //     var longString = 'Long \
+    // long \
+    // long \
+    // string';
+
+    // var longString = 'Long    '
+    //   + 'long   '
+    //   + 'long '
+    //   + 'string';
+    // console.log(longString)
+
+
+    // var obj = {
+    //   1: 'a',
+    //   3.2: 'b',
+    //   1e2: true,
+    //   1e-2: true,
+    //   .234: true,
+    //   0xFF: true
+    // };
+    // // console.log(obj)
+    //   x:'fesfsfe'
+    //   y:'fesfesfsfse'
+
+    // var obj = { p: 1 };
+    // Object.keys(obj) // ["p"]
+    // console.log(obj.p)
+    // // delete obj.p // true
+    // console.log(delete obj.p)
+    // console.log(obj.p)
+
+    // // obj.p // undefined
+    // console.log(Object.keys(obj))
+
+
+
+    // var obj = { a: 1, b: 2, c: 3 };
+
+    // for (var i in obj) {
+    //   console.log('键名：', i);
+    //   console.log('键值：', obj[i]);
+    // }
+    // // 键名： a
+    // // 键值： 1
+    // // 键名： b
+    // // 键值： 2
+    // // 键名： c
+    // // 键值： 3
+    // var print = function x() {
+    //   console.log(typeof x);
+    // };
+    // print()
+    // console.log(x)
+
+    // var add = Function(
+    //   'x',
+    //   'y',
+    //   'console.log(x + y)'
+    // );
+    // add(1, 2)
+
+    // function add(x, y) {
+    //   return x + y;
+    // }
+
+    // console.log(add(1, 2, 2))// 2
+
+
+    // f();
+    // var f = function () { };
+
+
+    // function f1() { }
+    // console.log(f1.name) // "f1"
+
+
+    // var f2 = function () { };
+    // console.log(f2.name) // "f2"
+
+
+    // var f3 = function () { };
+    // console.log(f3.name) // 'myName'
+
+
+    // var myFunc = function () { };
+
+    // function test(f) {
+    //   console.log(f.name);
+    // }
+
+    // test(myFunc) // myFunc
+
+    // function f() { }
+    // // 2
+    // console.log(f.length)
+
+
+
+    // function f() {
+    //   a();
+    //   b();
+    //   c();
+    // }
+
+    // console.log(f.toString())
+
+    //     console.log(Math.sqrt.toString())
+
+
+
+    //     function f() {/*
+    //   这是一个
+    //   多行注释
+    // */}
+
+    //     console.log(f.toString())
+    //     // "function f(){/*
+    //     //   这是一个
+    //     //   多行注释
+    //     // */}"
+
+
+    //     var multiline = function (fn) {
+    //       var arr = fn.toString().split('\n');
+    //       return arr.slice(1, arr.length - 1).join('\n');
+    //     };
+
+    //     function f() {/*
+    //   这是一个
+    //   多行注释
+    // */}
+
+    //     console.log(multiline(f));
+    //     // " 这是一个
+    //     //   多行注释"
+
+    // var a = 1;
+    // var x = function () {
+    //   console.log(a);
+    // };
+
+    // function f() {
+    //   var a = 2;
+    //   x();
+    // }
+
+    // f() // 1
+
+    // var x = function () {
+    //   console.log(a);
+    // };
+
+    // function y(f) {
+    //   var a = 2;
+    //   f();
+    // }
+
+    // y(x)
+
+    // function f(a, b) {
+    //   return a;
+    // }
+
+    // console.log(f(1, 2, 3)) // 1
+    // console.log(f(1)) // 1
+    // console.log(f()) // undefined   调用的时候，必须提供对应声明时候的参数。
+    // console.log(f.length) // 2
+
+
+    // function f(a, b) {
+    //   return a;
+    // }
+
+    // // f( , 1) // SyntaxError: Unexpected token ,(…)
+    // console.log(f(undefined, 1)) // undefined
+
+
+
+
+    // var f = function (one) {
+    //   console.log(arguments[0]);
+    //   console.log(arguments[1]);
+    //   console.log(arguments[2]);
+    // }
+    // f(4545, 'eewrew')
+
+
+
+    // var f = function (a, b) {
+    //   arguments[0] = 3;
+    //   arguments[1] = 122;
+    //   return a + b;
+    // }
+
+    // console.log(f(2,32323,32323)) // 5
+
+
+    // var f = function (a, b) {
+    //   'use strict'; // 开启严格模式
+    //   arguments[0] = 3;
+    //   arguments[1] = 2;
+    //   return a + b;
+    // }
+
+    // console.log(f(2,4)) // 2
+
+
+    // var f = function () {
+    //   console.log(arguments.callee === f);
+    //   console.log(arguments.callee);
+    // }
+
+    // f() // true
+
+    // function f1() {
+    //   var n = 999;
+    //   function f2() {
+    //     console.log(n);
+    //   }
+    //   return f2;
+    // }
+
+    // var result = f1();
+    // result(); // 999
+
+
+
+
+    // function Person(name) {
+    //   var _age;
+    //   function setAge(n) {
+    //     _age = n;
+    //   }
+    //   function getAge() {
+    //     return _age;
+    //   }
+
+    //   return {
+    //     name: name,
+    //     getAge: getAge,
+    //     setAge: setAge
+    //   };
+
+    // }
+
+    // var p1 = Person('张三');
+    // p1.setAge(25);
+    // console.log(p1.getAge()) // 25
+    // console.log(p1.name) // 25
+
+    // p1.name = 'wyl350'
+    // console.log(p1.name) // 25
+    // // console.log(_age) // 25
+
+    // console.log(p1.getAge())
+
+
+    // (function (a, b) {
+    //   console.log(a + b)
+    // })(3, 4);
+
+
+    // eval('var a = 1;');
+    // console.log(a) // 1
+
+    // var a = 1;
+    // eval('a = 442');
+
+    // console.log(a)
+
+
+    // var arr = ['a', 'b', 'c'];
+
+    // console.log(Object.keys(arr))
+    // console.log(Object.values(arr))
+    // ["0", "1", "2"]
+    // var arr = ['a', 'b', 'c'];
+
+    // console.log(arr['0']) // 'a'
+    // console.log(arr[0]) // 'a'
+
+
+
+    // var a = [];
+
+    // a[3.00] = 6;
+    // console.log(a[3]) // 6
+    // console.log(a[0]) // 
+    // console.log(a[2]) // 
+    // console.log(Object.keys(a))
+    // console.log(Object.values(a))
+    // console.log(a.length)
+
+
+
+    // var arr = ['a', 'b', 'c'];
+
+    // arr.length = 0;
+    // console.log(arr)
+    // arr[0] = 5456
+
+
+    // console.log(arr.length)
+    // console.log(arr)
+
+
+    // var a = [1, 2, 3];
+
+    // for (var i in a) {
+    //   console.log(a[i]);
+    // }
+
+
+    // var a = [1, 2, 3];
+    // a.foo = true;
+
+    // for (var key in a) {
+    //   console.log(key);
+    // }
+
+
+    // var a = ['a', 'b', 'c',];
+
+    // a.forEach(function (x, i) {
+    //   console.log(i + '. ' + x);
+    // })
+    // // 不产生任何输出
+
+    // for (var i in a) {
+    //   console.log(i);
+    // }
+    // // 不产生任何输出
+
+    // console.log(Object.keys(a))
+
+
+
+    // var a = [undefined, undefined, undefined];
+
+    // a.forEach(function (x, i) {
+    //   console.log(i + '. ' + x);
+    // });
+    // // 0. undefined
+    // // 1. undefined
+    // // 2. undefined
+
+    // for (var i in a) {
+    //   console.log(i);
+    // }
+    // // 0
+    // // 1
+    // // 2
+
+    // Object.keys(a)
+    // // ['0', '1', '2']
+
+
+
+
+    // arguments对象
+    // function args() { return arguments }
+    // var arrayLike = args('a', 'b');
+    // console.log(
+    //   arrayLike[0], // 'a'
+    //   arrayLike.length, // 2
+    //   arrayLike instanceof Array // false
+    // )
+    // // DOM元素集
+    // var elts = document.getElementsByTagName('h3')
+    // console.log(
+    //   elts.length,
+    //   elts instanceof Array,
+    // )
+    // // 字符串
+    // console.log(
+    //   'abc'[1], // 'b'
+    //   'abc'.length, // 3
+    //   'abc' instanceof Array // false
+    // )
+
+    // var arr = Array.prototype.slice.call('abc');
+    // arr.forEach(function (chr) {
+    //   console.log(chr);
+    // });
+    // var obj = { p: 1 };
+    // console.log(obj + 2) // "[object Object]2"
+
+    // var obj = { p: 1 };
+    // console.log(obj.valueOf()) // "[object Object]"
+    // console.log(obj.valueOf().toString()) // "[object Object]"
+
+
+    // var obj = new Date();
+    // obj.valueOf = function () { return 1 };
+    // obj.toString = function () { return 'hello' };
+
+    // console.log(obj + 2) // "hello2"
+
+
+
+    // function isOdd(n) {
+    //   return Math.abs(n % 2) === 1;
+    // }
+    // console.log(isOdd(-5)) // true
+    // console.log(isOdd(-4)) // false
+
+
+    // var x = 1;
+    // console.log(++x) // 2
+    // console.log(x) // 2
+
+    // console.log(--x) // 2
+    // console.log(x) // 2
+
+    // var y = 1;
+    // console.log(y++) // 2
+    // console.log(y) // 2
+
+    // console.log(y--) // 2
+    // console.log(y) // 2
+
+
+    // 1
+    // 0
+    // NaN
+    //     console.log(+true)
+    //     console.log(+[])
+    //     console.log(+{})
+    //     console.log(-true)
+    //     console.log(-[])
+    //     console.log(-{})
+
+
+    // 相当于 2 ** (3 ** 2)
+    // console.log(3 ** 2)
+    // a = 3 ** 2
+    // console.log(2 ** a)
+
+
+    // console.log(2 ** 3)
+    // b = 2 ** 3
+    // console.log(b ** 2)
+    // 512
+
+    // !undefined // true
+    // !null // true
+    // !0 // true
+    // !NaN // true
+    // !"" // true
+
+
+    // console.log((1 + 1) && (x += 1))
+
+    // function f() {
+    //   console.log('Hello World');
+    // }
+
+    // var value = (console.log('Hi!'), true);
+    // // Hi!
+
+    // console.log(value) // true
+
+    // // var x = 1;
+    // // (x) = 2;
+    // // console.log(x)
+
+    // // (var a = 1)
+    // // var obj = {
+    // //   width: '100'
+    // // };
+
+    // // console.log(Number(obj.width) + 20) // "10020"
+
+    // var wde = new Error('出错了');
+    // console.log(wde.message) // "出错了"
+    // console.log(wde.name) // "出错了"
+    // console.log(wde.stack) // "出错了"
+
+    // function throwit() {
+    //   throw new Error('wode');
+    // }
+
+    // function catchit() {
+    //   try {
+    //     throwit();
+    //   } catch (e) {
+    //     console.log(e.stack); // print stack trace
+    //     console.log(e.name); // print stack trace
+    //     console.log(typeof e)
+    //   }
+    // }
+
+    // catchit()
+    // // Error
+    // //    at throwit (~/examples/throwcatch.js:9:11)
+    // //    at catchit (~/examples/throwcatch.js:3:9)
+    // //    at repl:1:5
+
+
+
+    // function UserError(message) {
+    //   this.message = message || '默认信息';
+    //   this.name = 'UserError';
+    // }
+
+    // throw new UserError('出错了！');
+    // // Uncaught UserError {message: "出错了！", name: "UserError"}
+
+    // throw 'Error！';
+    // // Uncaught Error！
+
+    // // 抛出一个数值
+    // throw 42;
+    // // Uncaught 42
+
+    // // 抛出一个布尔值
+    // throw true;
+
+    // throw {
+    //   toString: function () {
+    //     return 'Error!';
+    //   }
+    // };
+    // try {
+    //   throw new Error('出错了!');
+    // } catch (e) {
+    //   // console.log(e.name + ": " + e.message);
+    //   // console.log(e.stack);
+    // }
+    // try {
+    //   throw "出错了";
+    // } catch (e) {
+    //   console.log(111);
+    // }
+    // console.log(222);
+
+
+
+
+    // function idle(x) {
+    //   try {
+    //     console.log(x);
+    //     return 'result';
+    //   } finally {
+    //     console.log('FINALLY');
+    //   }
+    // }
+
+    // idle('hello')
+
+
+    // var count = 0;
+    // function countUp() {
+    //   try {
+    //     return count;
+    //   } finally {
+    //     count++;
+    //   }
+    // }
+
+    // console.log(countUp())
+    // // 0    
+    // console.log(count)
+
+    // 1
+
+    //     function f() {
+    //       try {
+    //         console.log(0);
+    //         throw 'bug';
+    //       } catch (e) {
+    //         console.log(1);
+    //         return true; // 这句原本会延迟到 finally 代码块结束再执行
+    //         console.log(2); // 不会运行
+    //       } finally {
+    //         console.log(3);
+    //         return false; // 这句会覆盖掉前面那句 return
+    //         console.log(4); // 不会运行
+    //       }
+
+    //       console.log(5); // 不会运行
+    //     }
+
+    //     var result = f();
+    //     // 0
+    //     // 1
+    //     // 3
+
+    //     console.log(result)
+    // // false
+
+    // function f() {
+    //   try {
+    //     throw '出错了！';
+    //   } catch (e) {
+    //     console.log('捕捉到内部错误');
+    //     throw e; // 这句原本会等到finally结束再执行
+    //   } finally {
+    //     return false; // 直接返回
+    //   }
+    // }
+
+    // try {
+    //   console.log(f());
+    // } catch (e) {
+    //   // 此处不会执行
+    //   console.log('caught outer "bogus"');
+    // }
+
+
+    // try {
+    //   try {
+    //     consle.log('Hello world!'); // 报错
+    //   }
+    //   finally {
+    //     console.log('Finally');
+    //   }
+    //   console.log('Will I run?');
+    // } catch (error) {
+    //   console.error(error.message);
+    // }
+
+    // if (a)
+    //   b();
+    // c();
+    //  捕捉到内部错误
+    // block{
+    //   // ...
+    // }
+
+    // foo(bar)
+    // return (a + b);
+    // if (a === 0) {... }
+    // function foo(b) {... }
+    // function (x) { }
+
+
+    // foo(bar)
+    // return (a + b);
+    // if (a === 0) {... }
+    // function foo(b) {... }
+    // function(x) {... }
+
+    // console.log(' 我的名字是%s分手分手费 +收费色粉 %s说分手分手 34234234 收费色粉%s', 1, 1, 2)
+    // var number = 11 * 9;
+    // var color = 'red';
+
+    // console.log('%d %s balloons', number, color);
+    // console.log(
+    //   '%cThis text is styled!',
+    //   'color: red; background: yellow; font-size: 24px;'
+    // )
+    //     console.log({ foo: 'bar' })
+    //     // Object {foo: "bar"}
+    //     console.log(Date)
+    // // function Date() { [native code] }
+    // ['log', 'info', 'warn', 'error'].forEach(function (method) {
+    //   console[method] = console[method].bind(
+    //     console,
+    //     new Date().toISOString()
+    //   );
+    // });
+
+    // console.log("出错了！");
+
+
+    // console.error('Error: %s (%i)', 'Server is not responding', 500)
+    // // Error: Server is not responding (500)
+    // console.warn('Warning! Too few nodes (%d)', document.childNodes.length)
+    // // Warning! Too few nodes (1)
+
+
+    // var languages = [
+    //   { name: "JavaScript", fileExtension: ".js" },
+    //   { name: "TypeScript", fileExtension: ".ts" },
+    //   { name: "CoffeeScript", fileExtension: ".coffee" }
+    // ];
+
+    // console.table(languages);
+
+    // var languages = {
+    //   csharp: { name: "C#", paradigm: "object-oriented" },
+    //   fsharp: { name: "F#", paradigm: "functional" }
+    // };
+
+    // console.table(languages);
+
+
+
+    // function greet(user) {
+    //   console.count();
+    //   return 'hi ' + user;
+    // }
+
+    // greet('bob')
+    // //  : 1
+    // // "hi bob"
+
+    // greet('alice')
+    // //  : 2
+    // // "hi alice"
+
+    // greet('bob')
+    // //  : 3
+    // // "hi bob"
+
+
+    // console.log({ f1: 'foo', f2: 'bar' })
+    // // Object {f1: "foo", f2: "bar"}
+
+    // console.dir({ f1: 'foo', f2: 'bar' })
+    // Object
+    //   f1: "foo"
+    //   f2: "bar"
+    //   __proto__: Object
+
+    // console.dir(document.body)
+
+    // console.dir(document.body, { colors: true })
+    // console.dirxml(document.body)
+    // console.dirxml([1, 2, 3])
+    // // 等同于
+    // console.dir([1, 2, 3])
+    // console.assert(false, '判断条件不成立')
+    // console.assert(true, '判断条件不成立')
+    // try {
+    //   if (!false) {
+    //     throw new Error('判断条件不成立');
+    //   }
+    // } catch (e) {
+    //   console.error(e);
+    // }
+
+
+    // console.time('Array initialize');
+
+    // var array = new Array(1000000);
+    // for (var i = array.length - 1; i >= 0; i--) {
+    //   array[i] = new Object();
+    // };
+
+    // console.timeEnd('Array initialize');
+
+
+    // console.group('一级分组');
+    // console.log('一级分组的内容');
+
+    // console.group('二级分组');
+    // console.log('二级分组的内容');
+
+    // console.groupEnd(); // 二级分组结束
+    // console.groupEnd(); // 一级分组结束
+
+    // console.groupCollapsed('Fetching Data');
+
+    // console.log('Request Sent');
+    // console.error('Error: Server not responding (500)');
+
+    // console.groupEnd();
+    // console.trace()
+    // console.clear()
+
+
+    // monitorEvents(window, "resize");
+    // monitorEvents(window, ["resize", "scroll"])
+
+
+    // for (var i = 0; i < 5; i++) {
+    //   console.log(i);
+    //   if (i === 2) debugger;
+    // }
+    // var obj = Object();
+    // 等同于
+    // var obj = Object(undefined);
+    // var obj = Object(null);
+
+    // console.log(obj instanceof Object) // true
+
+
+    // var fn = function () { };
+    // var obj = Object(fn); // 返回原函数
+    // obj === fn // true
+
+
+    // var obj = {
+    //   p1: 123,
+    //   p2: 456
+    // };
+
+    // var a = ['Hello', 'World'];
+    // console.log(Object.values(a))
+    // console.log(Object.getOwnValues(a))
+
+    // var obj = {
+    //   p1: 123,
+    //   p2: 456
+    // };
+    // console.log(Object.keys(obj).length) // 2
+    // console.log(Object.getOwnPropertyNames(obj).length) // 2
+
+    // var obj = new Object();
+    // obj.valueOf() === obj // true
+    // console.log(obj)
+    // console.log(obj.valueOf())
+    // var obj = new Object();
+    // console.log(
+    //   1 + obj // "1[object Object]"
+    // )
+
+    // var obj = new Object();
+    // obj.valueOf = function () {
+    //   return 2;
+    // };
+    // console.log(
+    //   1 + obj // 3
+    // )
+
+    // var o1 = new Object();
+    // console.log(
+    //   o1.toString() // "[object Object]"
+    // )
+    // var o2 = { a: 1 };
+    // console.log(
+    //   o2.toString() // "[object Object]"
+    // )
+
+
+    // var obj = new Object();
+
+    // obj.toString = function () {
+    //   return 'hello';
+    // };
+    // console.log(
+    //   obj + ' ' + 'world' // "hello world"
+    // )
+
+    // value = 45
+    // console.log(
+    //   Object.prototype.toString.call(value)
+    // )
+
+
+    // var type = function (o) {
+    //   var s = Object.prototype.toString.call(o);
+    //   return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+    // };
+    // console.log(
+    //   type({}), // "object"
+    //   type([]), // "array"
+    //   type(5), // "number"
+    //   type(null), // "null"
+    //   type(), // "undefined"
+    //   type(/abcd/), // "regex"
+    //   type(new Date()), // "date"
+    // )
+
+    // var obj = { p: 'a' };
+    // console.log(
+    //   Object.getOwnPropertyDescriptor(obj, 'p')
+    // )
+    // // Object { value: "a",
+    // //   writable: true,
+    // //   enumerable: true,
+    // //   configurable: true
+    // // }
+    // var obj = { p: 'a' };
+    // console.log(
+    //   Object.getOwnPropertyDescriptor(obj, 'toString')
+    // )
+    // var obj = Object.defineProperties({}, {
+    //   p1: { value: 1, enumerable: true },
+    //   p2: { value: 2, enumerable: false }
+    // });
+    // console.log(
+    //   Object.getOwnPropertyNames(obj)
+    // )
+    // console.log(obj)
+
+
+
+    // Object.keys([]) // []
+    // Object.getOwnPropertyNames([]) // [ 'length' ]
+
+    // Object.keys(Object.prototype) // []
+    // Object.getOwnPropertyNames(Object.prototype)
+
+
+    // var obj = Object.defineProperty({}, 'p', {
+    //   value: 123,
+    //   writable: false,
+    //   enumerable: true,
+    //   configurable: false
+    // });
+    // console.log(
+    //   obj.p, // 123
+    //   obj.p = 246,
+    //   obj.p, // 123
+    // )
+
+    // var obj = Object.defineProperty({}, 'foo', {value:4545});
+    // console.log(
+    //   Object.getOwnPropertyDescriptor(obj, 'foo')
+    // )
+
+
+    // var obj = {};
+    // obj.p = 123;
+    // console.log(
+    //   Object.getOwnPropertyDescriptor(obj, 'p').value
+    // )
+    // // 123
+    // console.log(
+    //   Object.defineProperty(obj, 'p', { value: 246 })
+    // )
+    // console.log(
+    //   obj.p // 246
+    // )
+
+
+    // var obj = {};
+    // console.log(
+    //   'toString' in obj // true
+    // )
+
+
+    // var obj = {};
+
+    // Object.defineProperty(obj, 'x', {
+    //   value: 123,
+    //   enumerable: false
+    // });
+    // console.log(
+    //   obj.x // 123
+    // )
+    // for (var key in obj) {
+    //   console.log(key);
+    // }
+    // // undefined
+    // console.log(
+
+    //   Object.keys(obj)  // []
+    // )
+    // console.log(
+    //   JSON.stringify(obj) // "{}"
+    // )
+
+
+    // var obj = Object.defineProperty({}, 'p', {
+    //   get: function () {
+    //     return 'getter';
+    //   },
+    //   set: function (value) {
+    //     console.log('setter: ' + value);
+    //   }
+    // });
+    // 
+    //   obj.p // "getter"
+    // )
+    // obj.p = 123 // "setter: 123"
+
+    var obj = {
+      $n: 5,
+      get next() { return this.$n++ },
+      set next(n) {
+        if (n >= this.$n) this.$n = n;
+        else throw new Error('新的值必须大于当前值');
+      }
+    };
+
+    console.log(
+      obj.next // 5
+    )
+    console.log(
+      obj.next // 5
+    )
+    obj.next = 10;
+    console.log(
+      obj.next // 5
+    )
+    obj.next = 15;
+    console.log(
+      obj.next // 5
+    )
+// Uncaught Error: 新的值必须大于当前值
+
+
+
+
+  </script>
+  <a href="https://www.baidu.com/" onclick="f(); return false;">点击</a>
+  <a href="javascript: void(f())">文字</a>
+</body>
+
+</html>

@@ -16,7 +16,7 @@ JavaScript 的所有其他对象都继承自`Object`对象，即那些对象都�
 Object.print = function (o) { console.log(o) };
 ```
 
-上面代码中，`print`方法就是直接定义在`Object`对象上。
+上面代码中，`print`方法就是直接定义在`Object`对象上。**这是不是传说中的静态方法。**
 
 **（2）`Object`的实例方法**
 
@@ -31,15 +31,15 @@ var obj = new Object();
 obj.print() // Object
 ```
 
-上面代码中，`Object.prototype`定义了一个`print`方法，然后生成一个`Object`的实例`obj`。`obj`直接继承了`Object.prototype`的属性和方法，可以直接使用`obj.print`调用`print`方法。也就是说，`obj`对象的`print`方法实质上就是调用`Object.prototype.print`方法。
+上面代码中，`Object.prototype`定义了一个`print`方法，然后生成一个`Object`的实例`obj`。`obj`直接继承了`Object.prototype`的属性和方法，可以直接使用`obj.print`调用`print`方法。**也就是说，`obj`对象的`print`方法实质上就是调用`Object.prototype.print`方法。**
 
 关于原型对象`object.prototype`的详细解释，参见《面向对象编程》章节。这里只要知道，凡是定义在`Object.prototype`对象上面的属性和方法，将被所有实例对象共享就可以了。
 
-以下先介绍`Object`作为函数的用法，然后再介绍`Object`对象的原生方法，分成对象自身的方法（又称为“静态方法”）和实例方法两部分。
+以下先介绍**`Object`作为函数的用法**，然后再介绍`Object`对象的原生方法，分成对象自身的方法（又称为“静态方法”）和实例方法两部分。
 
 ## Object()
 
-`Object`本身是一个函数，可以当作工具方法使用，将任意值转为对象。这个方法常用于保证某个值一定是对象。
+`Object`本身是一个函数，可以当作工具方法使用，将任意值转为对象。**这个方法常用于保证某个值一定是对象。**
 
 如果参数为空（或者为`undefined`和`null`），`Object()`返回一个空对象。
 
@@ -79,7 +79,7 @@ obj instanceof Boolean // true
 ```javascript
 var arr = [];
 var obj = Object(arr); // 返回原数组
-obj === arr // true
+obj === arr // true    这里进一步的说明了arr 的本质也是一个object。
 
 var value = {};
 var obj = Object(value) // 返回原对象
@@ -90,7 +90,7 @@ var obj = Object(fn); // 返回原函数
 obj === fn // true
 ```
 
-利用这一点，可以写一个判断变量是否为对象的函数。
+利用这一点，可以写一个判断变量是否为对象的函数。**以上三个小例说明，函数数组实质上也是对象。**
 
 ```javascript
 function isObject(value) {
@@ -124,7 +124,7 @@ var obj = new Object(123);
 obj instanceof Number // true
 ```
 
-虽然用法相似，但是`Object(value)`与`new Object(value)`两者的语义是不同的，`Object(value)`表示将`value`转成一个对象，`new Object(value)`则表示新生成一个对象，它的值是`value`。
+虽然用法相似，但是`Object(value)`与`new Object(value)`两者的语义是不同的，**`Object(value)`表示将`value`转成一个对象，`new Object(value)`则表示新生成一个对象，它的值是`value`。**
 
 ## Object 的静态方法
 
@@ -176,7 +176,7 @@ var obj = {
 };
 
 Object.keys(obj).length // 2
-Object.getOwnPropertyNames(obj).length // 2
+Object.getOwnPropertyNames(obj).length // 2   得到的是数组，所以有数组的length属性。
 ```
 
 一般情况下，几乎总是使用`Object.keys`方法，遍历对象的属性。
@@ -279,7 +279,7 @@ obj + ' ' + 'world' // "hello world"
 
 上面代码表示，当对象用于字符串加法时，会自动调用`toString`方法。由于自定义了`toString`方法，所以返回字符串`hello world`。
 
-数组、字符串、函数、Date 对象都分别部署了自定义的`toString`方法，覆盖了`Object.prototype.toString`方法。
+**数组、字符串、函数、Date 对象都分别部署了自定义的`toString`方法，覆盖了`Object.prototype.toString`方法。**
 
 ```javascript
 [1, 2, 3].toString() // "1,2,3"
@@ -297,7 +297,7 @@ obj + ' ' + 'world' // "hello world"
 // "Tue May 10 2016 09:11:31 GMT+0800 (CST)"
 ```
 
-上面代码中，数组、字符串、函数、Date 对象调用`toString`方法，并不会返回`[object Object]`，因为它们都自定义了`toString`方法，覆盖原始方法。
+上面代码中，数组、字符串、函数、Date 对象调用`toString`方法，并不会返回`[object Object]`，**因为它们都自定义了`toString`方法，覆盖原始方法。**
 
 ### toString() 的应用：判断数据类型
 
@@ -316,7 +316,7 @@ obj.toString() // "[object Object]"
 Object.prototype.toString.call(value)
 ```
 
-上面代码表示对`value`这个值调用`Object.prototype.toString`方法。
+上面代码表示对`value`这个值调用`Object.prototype.toString`方法。直接使用对象原型的tostring方法。
 
 不同数据类型的`Object.prototype.toString`方法返回值如下。
 

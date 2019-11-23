@@ -320,7 +320,7 @@ cleansUp()
 //    at <anonymous>:10:1
 ```
 
-上面代码中，由于没有`catch`语句块，一旦发生错误，代码就会中断执行。中断执行之前，会先执行`finally`代码块，然后再向用户提示报错信息。
+上面代码中，**由于没有`catch`语句块，一旦发生错误，代码就会中断执行。中断执行之前，**会先执行`finally`代码块，然后再向用户提示报错信息。
 
 ```javascript
 function idle(x) {
@@ -357,7 +357,7 @@ count
 // 1
 ```
 
-上面代码说明，`return`语句里面的`count`的值，是在`finally`代码块运行之前就获取了。
+**上面代码说明，`return`语句里面的`count`的值，是在`finally`代码块运行之前就获取了。**
 
 下面是`finally`代码块用法的典型场景。
 
@@ -404,9 +404,9 @@ result
 // false
 ```
 
-上面代码中，`catch`代码块结束执行之前，会先执行`finally`代码块。
+**上面代码中，`catch`代码块结束执行之前，会先执行`finally`代码块。
 
-`catch`代码块之中，触发转入`finally`代码快的标志，不仅有`return`语句，还有`throw`语句。
+`catch`代码块之中，触发转入`finally`代码快的标志，不仅有`return`语句，还有`throw`语句。**
 
 ```javascript
 function f() {

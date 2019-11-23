@@ -33,7 +33,7 @@ JavaScript 提供了一个内部数据结构，用来描述对象的属性，控
 
 （4）`configurable`
 
-`configurable`是一个布尔值，表示可配置性，默认为`true`。如果设为`false`，将阻止某些操作改写该属性，比如无法删除该属性，也不得改变该属性的属性描述对象（`value`属性除外）。也就是说，`configurable`属性控制了属性描述对象的可写性。
+`configurable`是一个布尔值，表示可配置性，默认为`true`。如果设为`false`，将阻止某些操作改写该属性，比如无法删除该属性，**也不得改变该属性的属性描述对象（`value`属性除外）。**也就是说，`configurable`属性控制了属性描述对象的可写性。
 
 （5）`get`
 
@@ -73,7 +73,7 @@ Object.getOwnPropertyDescriptor(obj, 'toString')
 
 ## Object.getOwnPropertyNames()
 
-`Object.getOwnPropertyNames`方法返回一个数组，成员是参数对象自身的全部属性的属性名，不管该属性是否可遍历。
+`Object.getOwnPropertyNames`方法返回一个数组，成员是参数对象自身的全部属性的属性名，**不管该属性是否可遍历**。
 
 ```javascript
 var obj = Object.defineProperties({}, {
@@ -159,7 +159,7 @@ obj.p3 // "123abc"
 
 上面代码中，`Object.defineProperties()`同时定义了`obj`对象的三个属性。其中，`p3`属性定义了取值函数`get`，即每次读取该属性，都会调用这个取值函数。
 
-注意，一旦定义了取值函数`get`（或存值函数`set`），就不能将`writable`属性设为`true`，或者同时定义`value`属性，否则会报错。
+注意，**一旦定义了取值函数`get`（或存值函数`set`），就不能将`writable`属性设为`true`，或者同时定义`value`属性，否则会报错。**
 
 ```javascript
 var obj = {};
@@ -185,7 +185,7 @@ Object.defineProperty(obj, 'p', {
 
 ```javascript
 var obj = {};
-Object.defineProperty(obj, 'foo', {});
+Object.defineProperty(obj, 'foo', {value:'78'});
 Object.getOwnPropertyDescriptor(obj, 'foo')
 // {
 //   value: undefined,
@@ -213,7 +213,7 @@ obj.propertyIsEnumerable('toString') // false
 
 ## 元属性
 
-属性描述对象的各个属性称为“元属性”，因为它们可以看作是控制属性的属性。
+**属性描述对象的各个属性称为“元属性”，因为它们可以看作是控制属性的属性。**
 
 ### value
 
@@ -268,7 +268,7 @@ obj.a = 37;
 
 上面代码是严格模式，对`obj.a`任何赋值行为都会报错。
 
-如果原型对象的某个属性的`writable`为`false`，那么子对象将无法自定义这个属性。
+**如果原型对象的某个属性的`writable`为`false`，那么子对象将无法自定义这个属性。**
 
 ```javascript
 var proto = Object.defineProperty({}, 'foo', {
@@ -284,7 +284,7 @@ obj.foo // 'a'
 
 上面代码中，`proto`是原型对象，它的`foo`属性不可写。`obj`对象继承`proto`，也不可以再自定义这个属性了。如果是严格模式，这样做还会抛出一个错误。
 
-但是，有一个规避方法，就是通过覆盖属性描述对象，绕过这个限制。原因是这种情况下，原型链会被完全忽视。
+**但是，有一个规避方法，就是通过覆盖属性描述对象，绕过这个限制。原因是这种情况下，原型链会被完全忽视。**
 
 ```javascript
 var proto = Object.defineProperty({}, 'foo', {
@@ -344,7 +344,7 @@ JSON.stringify(obj) // "{}"
 
 上面代码中，`obj.x`属性的`enumerable`为`false`，所以一般的遍历操作都无法获取该属性，使得它有点像“秘密”属性，但不是真正的私有属性，还是可以直接获取它的值。
 
-注意，`for...in`循环包括继承的属性，`Object.keys`方法不包括继承的属性。如果需要获取对象自身的所有属性，不管是否可遍历，可以使用`Object.getOwnPropertyNames`方法。
+注意，**`for...in`循环包括继承的属性，`Object.keys`方法不包括继承的属性。如果需要获取对象自身的所有属性，不管是否可遍历，可以使用`Object.getOwnPropertyNames`方法。**
 
 另外，`JSON.stringify`方法会排除`enumerable`为`false`的属性，有时可以利用这一点。如果对象的 JSON 格式输出要排除某些属性，就可以把这些属性的`enumerable`设为`false`。
 
@@ -375,7 +375,7 @@ Object.defineProperty(obj, 'p', {configurable: true})
 
 上面代码中，`obj.p`的`configurable`为`false`。然后，改动`value`、`writable`、`enumerable`、`configurable`，结果都报错。
 
-注意，`writable`只有在`false`改为`true`会报错，`true`改为`false`是允许的。
+**注意，`writable`只有在`false`改为`true`会报错，`true`改为`false`是允许的。**
 
 ```javascript
 var obj = Object.defineProperty({}, 'p', {
@@ -387,7 +387,7 @@ Object.defineProperty(obj, 'p', {writable: false})
 // 修改成功
 ```
 
-至于`value`，只要`writable`和`configurable`有一个为`true`，就允许改动。
+**至于`value`，只要`writable`和`configurable`有一个为`true`，就允许改动。**
 
 ```javascript
 var o1 = Object.defineProperty({}, 'p', {
@@ -424,7 +424,7 @@ obj.p // 1
 
 上面代码中，`obj.p`的`writable`为`false`，对`obj.p`直接赋值不会生效。如果是严格模式，还会报错。
 
-可配置性决定了目标属性是否可以被删除（delete）。
+**可配置性决定了目标属性是否可以被删除（delete）。**
 
 ```javascript
 var obj = Object.defineProperties({}, {
@@ -480,7 +480,7 @@ var obj = {
 
 注意，取值函数`get`不能接受参数，存值函数`set`只能接受一个参数（即属性的值）。
 
-存取器往往用于，属性的值依赖对象内部数据的场合。
+**存取器往往用于，属性的值依赖对象内部数据的场合。**
 
 ```javascript
 var obj ={

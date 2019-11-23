@@ -23,7 +23,7 @@
 - features/console.md: console 对象与控制台
 - stdlib/: 标准库
 - stdlib/object.md: Object 对象
-- stdlib/attributes.md: 属性描述对象
+- stdlib/attributes.md: 属性描述对象 看到了506行，对象的拷贝那部分了。
 - stdlib/array.md: Array 对象
 - stdlib/wrapper.md: 包装对象
 - stdlib/boolean.md: Boolean 对象
